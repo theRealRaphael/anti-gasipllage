@@ -1,10 +1,12 @@
 package com.example.antigaspillage.data;
 
-public class panier {
+public class Commercant {
 
     private String catégorie;
 
     private String localisation;
+
+    private String nom;
 
     public String getCatégorie() {
         return catégorie;
@@ -20,5 +22,13 @@ public class panier {
 
     public void setLocalisation(String localisation) {
         this.localisation = localisation;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 }
