@@ -1,2 +1,4 @@
-package com.example.antigaspillage.DAO;public interface ProduitDAO {
+package com.example.antigaspillage.DAO;
+
+public interface ProduitDAO {
 }

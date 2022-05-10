@@ -1,2 +1,4 @@
-package com.example.antigaspillage.DAO;public class ProduitImpl {
+package com.example.antigaspillage.DAO;
+
+public class ProduitImpl implements ProduitDAO {
 }

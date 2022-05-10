@@ -1,6 +1,6 @@
 package com.example.antigaspillage.data;
 
-public class panierDAO {
+public class panier {
 
     private String catégorie;
 
