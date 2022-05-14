@@ -1,5 +1,6 @@
 package com.example.antigaspillage.metier;
 
+import com.example.antigaspillage.DAO.PanierDAO;
 import com.example.antigaspillage.data.Panier;
 
 import java.util.List;
@@ -15,4 +16,10 @@ public interface IPanierMetier {
     public List<Panier> rechercherPanierNomCommercant(String nomCommercant) throws Exception;
 
     public List<Panier> rechercherPanierLocalisation(String localisation) throws Exception;
+
+    public void setDao(PanierDAO dao);
+
+    public void init();
+
+    public void ajouterPanier(Panier panier);
 }

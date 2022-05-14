@@ -1,14 +1,18 @@
 package com.example.antigaspillage.DAO;
 
 import com.example.antigaspillage.data.Panier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Configuration
 public class PanierImpl implements PanierDAO {
 
     private List<Panier> panierRepository = new ArrayList<>();
 
+    @Bean
     @Override
     public List<Panier> findAll() throws Exception {
         if (!panierRepository.isEmpty()){
@@ -35,7 +39,7 @@ public class PanierImpl implements PanierDAO {
     public List<Panier> findByCategorie(String categorie) throws Exception {
         List<Panier> resPanier = null;
         for (Panier panier : panierRepository) {
-            if (panier.getCatégorie().equals(categorie)) {
+            if (panier.getCategorie().equals(categorie)) {
                 resPanier.add(panier);
             }
         }
@@ -77,6 +81,18 @@ public class PanierImpl implements PanierDAO {
             }
         }
         throw new Exception("Ce panier ayant pour Id : " + Id + " n'éxiste pas.");
+    }
+
+    @Override
+    public void add(Panier panier) {
+        panierRepository.add(panier);
+    }
+
+    @Override
+    public void init() {
+        panierRepository.add(new Panier("legumes", "tours", 1, "Jean Dupont", false));
+        panierRepository.add(new Panier("fruits", "monts", 2, "John Doe", false));
+        panierRepository.add(new Panier("burgers", "joué-les-tours", 3, "Salt Bay", false));
     }
 
 }
