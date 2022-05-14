@@ -5,13 +5,16 @@ import com.example.antigaspillage.data.Panier;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProduitImpl implements ProduitDAO {
+public class PanierImpl implements PanierDAO {
 
     private List<Panier> panierRepository = new ArrayList<>();
 
     @Override
-    public List<Panier> findAll() {
-        return panierRepository;
+    public List<Panier> findAll() throws Exception {
+        if (!panierRepository.isEmpty()){
+            return panierRepository;
+        }
+        throw new Exception("Il n'y a aucun panier d'enregistré !");
     }
 
     @Override

@@ -4,9 +4,9 @@ import com.example.antigaspillage.data.Panier;
 
 import java.util.List;
 
-public interface ProduitDAO {
+public interface PanierDAO {
 
-    public List<Panier> findAll();
+    public List<Panier> findAll() throws Exception;
 
     public List<Panier> findByCommercantNom(String commercant) throws Exception;
 
