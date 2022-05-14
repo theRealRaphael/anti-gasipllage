@@ -10,7 +10,7 @@ public class CommercantMetierImpl implements ICommercantMetier{
     private CommercantDAO commercantDAO;
 
     @Override
-    public List<Commercant> listerCommercants() {
+    public List<Commercant> listerCommercants() throws Exception {
         return commercantDAO.findAll();
     }
 

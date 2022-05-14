@@ -10,8 +10,11 @@ public class CommercantImpl implements CommercantDAO {
 private List<Commercant> commercantRepository = new ArrayList<>();
 
     @Override
-    public List<Commercant> findAll() {
-        return commercantRepository;
+    public List<Commercant> findAll() throws Exception {
+        if (!commercantRepository.isEmpty()) {
+            return commercantRepository;
+        }
+        throw new Exception("Il n'y a aucun commerdant d'enregistré !");
     }
 
     @Override
@@ -21,7 +24,7 @@ private List<Commercant> commercantRepository = new ArrayList<>();
                 return commercant;
             }
         }
-        throw new Exception("Aucun commercant ne correspond a ce nom");
+        throw new Exception("Aucun commercant ne correspond au nom : " + nom);
     }
 
     @Override
@@ -35,7 +38,7 @@ private List<Commercant> commercantRepository = new ArrayList<>();
         if (!resCommercant.isEmpty()) {
             return resCommercant;
         }
-        throw new Exception("Aucun commercant ne correspond a cet emplacement");
+        throw new Exception("Aucun commercant ne correspond a l'emplacement : " + localisation);
     }
 
     @Override
@@ -49,6 +52,6 @@ private List<Commercant> commercantRepository = new ArrayList<>();
         if (!resCommercant.isEmpty()){
             return resCommercant;
         }
-        throw new Exception("Aucun commercant ne correspond a cette catégorie");
+        throw new Exception("Aucun commercant ne correspond a la catégorie : " + categorie);
     }
 }

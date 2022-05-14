@@ -14,6 +14,16 @@ public class Panier {
 
     private String nomCommercant;
 
+    private boolean isReserved;
+
+    public boolean isReserved() {
+        return isReserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        isReserved = reserved;
+    }
+
     public String getCatégorie() {
         return catégorie;
     }

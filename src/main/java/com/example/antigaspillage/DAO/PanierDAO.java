@@ -15,4 +15,6 @@ public interface PanierDAO {
     public List<Panier> findBylocalisation(String localisation) throws Exception;
 
     public Panier findById(int Id) throws Exception;
+
+    public boolean isReserved(int Id) throws Exception;
 }

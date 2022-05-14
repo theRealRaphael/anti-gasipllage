@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface CommercantDAO {
 
-    public List<Commercant> findAll();
+    public List<Commercant> findAll() throws Exception;
 
     public Commercant findByNom(String nom) throws Exception;
 

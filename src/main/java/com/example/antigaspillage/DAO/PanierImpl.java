@@ -28,7 +28,7 @@ public class PanierImpl implements PanierDAO {
         if (!resPanier.isEmpty()){
             return resPanier;
         }
-        throw new Exception("Il n'éxiste pas de panier pour ce commercant");
+        throw new Exception("Il n'éxiste pas de panier pour le commercant : " + commercantNom);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class PanierImpl implements PanierDAO {
         if (!resPanier.isEmpty()){
             return resPanier;
         }
-        throw new Exception("Il n'éxiste pas de panier pour cette catégorie");
+        throw new Exception("Il n'éxiste pas de panier pour la catégorie : " + categorie);
     }
 
     @Override
@@ -56,7 +56,7 @@ public class PanierImpl implements PanierDAO {
         if (!resPanier.isEmpty()){
             return resPanier;
         }
-        throw new Exception("Il n'éxiste pas de panier pour cette localisation");
+        throw new Exception("Il n'éxiste pas de panier pour la localisation : " + localisation);
     }
 
     @Override
@@ -66,7 +66,17 @@ public class PanierImpl implements PanierDAO {
                 return panier;
             }
         }
-        throw new Exception("Il n'éxiste pas de panier pour cet ID");
+        throw new Exception("Il n'éxiste pas de panier pour l'ID : " + Id);
+    }
+
+    @Override
+    public boolean isReserved(int Id) throws Exception {
+        for (Panier panier : panierRepository) {
+            if (panier.getId() == Id){
+                return panier.isReserved();
+            }
+        }
+        throw new Exception("Ce panier ayant pour Id : " + Id + " n'éxiste pas.");
     }
 
 }
