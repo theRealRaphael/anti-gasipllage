@@ -17,4 +17,8 @@ public interface PanierDAO {
     public Panier findById(int Id) throws Exception;
 
     public boolean isReserved(int Id) throws Exception;
+
+    public void add(Panier panier);
+
+    public void init();
 }
