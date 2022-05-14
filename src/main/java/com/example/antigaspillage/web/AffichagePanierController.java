@@ -35,8 +35,8 @@ public class AffichagePanierController {
         return "panier";
     }
 
-    @RequestMapping("/rechercherPanierCommercantNom")
-    public String rechercherPanierCommercantNom(Model model, String commercantNom) throws Exception {
+    @RequestMapping(value = "/rechercherPanierCommercantNom", method = RequestMethod.POST)
+    public String rechercherPanierCommercantNom(Model model, @RequestParam("valcor") String commercantNom) throws Exception {
         model.addAttribute("panier", panierMetier.rechercherPanierNomCommercant(commercantNom));
         return "panier";
     }

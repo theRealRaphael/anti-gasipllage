@@ -15,7 +15,7 @@
     <input type="submit" value="Chercher tous les paniers">
 </form>
 <br><br>
-<form action="/rechercherPanierCommercantNom" method="get">
+<form action="/rechercherPanierCommercantNom" method="post">
     <input type="text" placeholder="Nom de commerçant" id="valcor"/>
 
     <input type="submit" value="Chercher par commerçant">
