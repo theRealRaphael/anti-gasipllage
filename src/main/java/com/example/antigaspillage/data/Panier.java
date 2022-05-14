@@ -1,5 +1,7 @@
 package com.example.antigaspillage.data;
 
+import java.util.List;
+
 public class Panier {
 
     private String categorie;
@@ -8,7 +10,7 @@ public class Panier {
 
     private int Id;
 
-    //private List<String> listeDeProduits;
+    private List<String> listeDeProduits;
 
     private String nomCommercant;
 
@@ -46,14 +48,14 @@ public class Panier {
         Id = id;
     }
 
-    /*public List<String> getListeDeProduits() {
+    public List<String> getListeDeProduits() {
         return listeDeProduits;
     }
 
     public void setListeDeProduits(List<String> listeDeProduits) {
         this.listeDeProduits = listeDeProduits;
     }
-*/
+
 
     public String getNomCommercant(){
         return nomCommercant;
@@ -63,12 +65,13 @@ public class Panier {
         this.nomCommercant = nomCommercant;
     }
 
-    public Panier(String categorie, String localisation, int id, String nomCommercant, boolean isReserved){
+    public Panier(String categorie, String localisation, int id, String nomCommercant, boolean isReserved, List<String> listeDeProduits){
         this.categorie = categorie;
         this.localisation = localisation;
         this.Id = id;
         this.nomCommercant = nomCommercant;
         this.isReserved = isReserved;
+        this.listeDeProduits = listeDeProduits;
     }
 
 }

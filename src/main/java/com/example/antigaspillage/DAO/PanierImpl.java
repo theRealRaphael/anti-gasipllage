@@ -90,9 +90,15 @@ public class PanierImpl implements PanierDAO {
 
     @Override
     public void init() {
-        panierRepository.add(new Panier("legumes", "tours", 1, "Jean Dupont", false));
-        panierRepository.add(new Panier("fruits", "monts", 2, "John Doe", false));
-        panierRepository.add(new Panier("burgers", "joué-les-tours", 3, "Salt Bay", false));
+        List<String> list = new ArrayList<>();
+        list.add("piano");
+        list.add("pomme");
+        list.add("haricots");
+        list.add("aubergine");
+        list.add("Yomi yori Kikoyu, Koukoku No Hi To Honoo No Syoujo.");
+        panierRepository.add(new Panier("legumes", "tours", 1, "Jean Dupont", false, list));
+        panierRepository.add(new Panier("fruits", "monts", 2, "John Doe", false, list));
+        panierRepository.add(new Panier("burgers", "joué-les-tours", 3, "Salt Bay", false, list));
     }
 
 }

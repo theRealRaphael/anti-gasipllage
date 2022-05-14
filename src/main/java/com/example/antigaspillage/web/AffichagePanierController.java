@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -16,11 +17,16 @@ public class AffichagePanierController {
     @Autowired
     private IPanierMetier panierMetier;
 
-    @RequestMapping(value = "/panier", method = RequestMethod.GET)
+    @RequestMapping(value = {"/panier"}, method = RequestMethod.GET)
     public String affichagePaniers(Model model) throws Exception {
         List<Panier> panierList = panierMetier.listerPaniers();
         model.addAttribute("panier", panierList);
         return "panier";
+    }
+
+    @RequestMapping(value = {"/"}, method = RequestMethod.GET)
+    public String affichageMenu(Model model) throws Exception {
+        return "psearch";
     }
 
     @RequestMapping(value = "/rechercherPaniersId", method = RequestMethod.GET)

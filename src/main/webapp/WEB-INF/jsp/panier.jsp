@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="ul" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Paniers</title>
@@ -16,22 +18,27 @@
         <td>Catégorie</td>
         <td>Commerçant</td>
         <td>Localisation</td>
-        <td>Prix</td>
+        <!--<td>Prix</td>-->
         <td>Produits</td>
     </tr>
-    <div th:each="p:${paniers}" href="panier?id=${p.id}">
-        <tr>
-            <td tr:text="${p.categorie}"></td>
-            <td tr:text="${p.nomCommercant}"></td>
-            <td tr:text="${p.localisation}"></td>
-            <td tr:text="${p.prix}"></td>
-            <td
-                    <ul:forEach var = "i" begin = "0" end = "3">
-                        li:text="${p.listDeProduits}[<c:out value = "${i}"/>]">
-                    </ul:forEach>
-            </td>
-        </tr>
-    </div>
+
+
+<c:forEach items="${panier}" var="p">
+
+    <tr>
+        <td><c:out value="${p.categorie}"></c:out></td>
+        <td><c:out value="${p.nomCommercant}"></c:out></td>
+        <td><c:out value="${p.localisation}"></c:out></td>
+
+        <td>
+            <ul:forEach var="i" begin="0" end="2">
+                <li><c:out value="${p.listeDeProduits[i]}"></c:out></li>
+            </ul:forEach>
+        </td>
+    </tr>
+
+</c:forEach>
+
 </a>
 </table>
 </body>

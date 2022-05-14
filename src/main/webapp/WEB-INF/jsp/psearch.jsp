@@ -11,16 +11,32 @@
     <title>Recherche de panier</title>
 </head>
 <body>
+<form action="/panier">
+    <input type="submit" value="Chercher tous les paniers">
+</form>
+<br><br>
+<form action="/rechercherPanierCommercantNom" method="get">
+    <input type="text" placeholder="Nom de commerçant" id="valcor"/>
+
+    <input type="submit" value="Chercher par commerçant">
+</form>
+<br><br>
+<form action="/rechercherPanierId">
+    <input type="text" placeholder="No Id" id="valid"/>
+
+    <input type="submit" value="Chercher par id">
+</form>
+<br><br>
 <form action="">
-    <label for="filter">Filtrer le panier par :</label>
-    <select name="filter" id="filter">
-        <option value="com">Commerçant</option>
-        <option value="cat">Catégorie</option>
-        <option value="loc">Localisation</option>
-    </select>
-    <input type="text" id="val"/>
-    <br><br>
-    <input type="submit" value="Submit">
+    <input type="text" placeholder="Nom de catégorie" id="valcat"/>
+
+    <input type="submit" value="Chercher par catégorie">
+</form>
+<br><br>
+<form action="">
+    <input type="text" placeholder="Localisation" id="valloc"/>
+
+    <input type="submit" value="Chercher par localisation">
 </form>
 </body>
 </html>
